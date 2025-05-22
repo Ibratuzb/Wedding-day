@@ -1,0 +1,72 @@
+.btn-default {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  background: linear-gradient(45deg, #F14E95, #D4A373);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+.btn-default::before {
+  content: "♥";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  animation: pulseHeart 2s ease-in-out infinite;
+}
+
+.btn-default:hover {
+  background: linear-gradient(45deg, #D43F7E, #F14E95);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(241, 78, 149, 0.5);
+  color: #D4A373;
+  text-shadow: 0 0 10px rgba(212, 163, 115, 0.7);
+}
+
+.btn-default:hover::before {
+  color: #FFFFFF;
+  transform: scale(1.2);
+}
+
+.btn-default:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 10px rgba(241, 78, 149, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .btn-default {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .btn-default::before {
+    font-size: 12px;
+    top: 6px;
+    left: 6px;
+  }
+}
+
+/* Animatsiyalar (vaqt sanovchi bilan bir xil) */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(241, 78, 149, 0.5); }
+  50% { box-shadow: 0 0 15px rgba(241, 78, 149, 0.9); }
+}
+
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
